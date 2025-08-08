@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seattle Roleplay - Events</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background-color: #000000;
+    color: white;
+  }
+  header {
+    background-color: #1e3d59;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  nav {
+    background-color: #16324f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #1b4965;
+  }
+  section {
+    padding: 2em;
+    max-width: 900px;
+    margin: auto;
+  }
+  footer {
+    background-color: #1e3d59;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+  }
+  .social-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+  }
+  .event {
+    background-color: #16324f;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+  }
+</style>
+<script>
+  function convertEventTime() {
+    const eventTimeUTC = new Date('2025-12-19T08:30:00Z'); // 7:30PM AEDT is 08:30 UTC
+    const userTime = eventTimeUTC.toLocaleString([], {
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit', hour12: true,
+      timeZoneName: 'short'
+    });
+    document.getElementById('event-time').textContent = userTime;
+  }
+  window.onload = convertEventTime;
+</script>
+</head>
+<body>
+
+<header>
+  <h1>Seattle Roleplay</h1>
+  <p>Emergency Response: Liberty County Server</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="rules.html">Rules</a>
+  <a href="directors.html">Directors Team</a>
+  <a href="events.html">Events</a>
+  <a href="https://discord.gg/4RZBMxmtrG" target="_blank">Join Discord</a>
+</nav>
+
+<section>
+  <h2>Upcoming Events</h2>
+  
+  <div class="event">
+    <h3>Movie Night</h3>
+    <p><b>Date &amp; Time:</b> <span id="event-time">Loading...</span></p>
+    <p><b>Location:</b> Events Voice Channel inside the Discord</p>
+    <p>Join us for a fun movie night in our Discord Events VC! Bring snacks, friends, and enjoy some great films together.</p>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2025 Seattle Roleplay | ER:LC Server</p>
+  <div class="social-buttons">
+    <a href="https://discord.gg/4RZBMxmtrG" target="_blank">Discord</a>
+    <a href="https://youtube.com/@Seattle_Roleplay" target="_blank">YouTube</a>
+    <a href="https://tiktok.com/@Seattle__Roleplay" target="_blank">TikTok</a>
+  </div>
+</footer>
+
+</body>
+</html>
